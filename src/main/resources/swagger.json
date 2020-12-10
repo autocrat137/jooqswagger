@@ -1,0 +1,121 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "testign",
+    "version" : "1.0.0",
+    "title" : "JooqSwagger"
+  },
+  "host" : "localhost:9090",
+  "basePath" : "/jooqswagger",
+  "schemes" : [ "http" ],
+  "consumes" : [ "application/json", "application/xml" ],
+  "produces" : [ "application/xml", "application/json" ],
+  "paths" : {
+    "/getall" : {
+      "get" : {
+        "tags" : [ "getall" ],
+        "summary" : "gets all",
+        "description" : "",
+        "operationId" : "getall",
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "type" : "array",
+              "xml" : {
+                "name" : "AllGroups",
+                "wrapped" : true
+              },
+              "items" : {
+                "$ref" : "#/definitions/GroupDto"
+              }
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      }
+    },
+    "/get" : {
+      "get" : {
+        "tags" : [ "getone" ],
+        "summary" : "gets one",
+        "description" : "gets one",
+        "operationId" : "getone",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "ID of author",
+          "required" : true,
+          "type" : "integer",
+          "default" : 1
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/GroupDto"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      }
+    },
+    "/put" : {
+      "post" : {
+        "tags" : [ "post" ],
+        "summary" : "adds",
+        "description" : "adds group",
+        "operationId" : "add",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "query",
+          "description" : "ID of author",
+          "required" : true,
+          "type" : "integer",
+          "default" : 1
+        }, {
+          "name" : "fn",
+          "in" : "query",
+          "description" : "fn of author",
+          "required" : true,
+          "type" : "string"
+        }, {
+          "name" : "ln",
+          "in" : "query",
+          "description" : "ln of author",
+          "required" : true,
+          "type" : "string"
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "schema" : {
+              "$ref" : "#/definitions/GroupDto"
+            }
+          }
+        },
+        "x-contentType" : "application/json",
+        "x-accepts" : "application/json"
+      }
+    }
+  },
+  "definitions" : {
+    "GroupDto" : {
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "name" : {
+          "type" : "string",
+          "minLength" : 1,
+          "maxLength" : 254
+        }
+      }
+    }
+  }
+}

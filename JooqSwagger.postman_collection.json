@@ -1,0 +1,99 @@
+{
+	"info": {
+		"_postman_id": "36472c44-f353-43cb-aa8a-51344c743a76",
+		"name": "JooqSwagger",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "JooqSwagger",
+			"item": [
+				{
+					"name": "Getall Author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/jooqswagger/getall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"jooqswagger",
+								"getall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one author",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/jooqswagger/get?id=3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"jooqswagger",
+								"get"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post one author",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/jooqswagger/put?id=3&fn=harry&ln=potter",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"jooqswagger",
+								"put"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "3",
+									"description": "id"
+								},
+								{
+									"key": "fn",
+									"value": "harry",
+									"description": "first name"
+								},
+								{
+									"key": "ln",
+									"value": "potter",
+									"description": "last name"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
